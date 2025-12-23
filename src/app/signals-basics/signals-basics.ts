@@ -26,7 +26,7 @@ export class SignalsBasics {
     effect(() => {
       console.info("sum: ", this.sum());
       // Use computed instead of signal for this
-      this.isBig.set(this.sum() > 10);
+      this.isBig.set(this.sum() > 5);
     }, {
       // Avoid doing this, this is just the demo puspose.
       allowSignalWrites: true
