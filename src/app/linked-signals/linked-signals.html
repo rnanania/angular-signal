@@ -1,0 +1,10 @@
+<button (click)="addProduct()">Add Product</button>
+<button (click)="removeProduct()">Remove Product</button>
+
+<ul>
+    @for (product of products(); track $index) {
+    <li class="product" [class.selected]="selectedproduct() === product" (click)="selectedproduct.set(product)">
+        {{ product }}
+    </li>
+    }
+</ul>
