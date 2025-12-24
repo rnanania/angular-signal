@@ -1,0 +1,20 @@
+<div>
+    <label>
+        Amount:
+        <input type="number" [formControl]="amountControl" />
+    </label>
+</div>
+
+<div>
+    <label>
+        Currency:
+        <select [formControl]="currencyControl">
+            @for (c of currencies; track c) {
+            <option [value]="c">{{ c }}</option>
+            }
+        </select>
+    </label>
+</div>
+
+<currency-converter [amount]="amountControl.value" [currency]="currencyControl.value" (callbackFn)="callbackFn($event)">
+</currency-converter>
